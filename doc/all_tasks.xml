@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<partitions>
+  <partition name="География">
+    <task name="Столицы стран" key="1440321054" time-limit="1800000">
+      <question name="Столица России" type="3" answer="Москва" />
+      <question name="Столица Франции" type="3" answer="Париж" />
+      <question name="Столица Германии" type="3" answer="Берлин" />
+    </task>
+    <task name="Столицы стран Азии" key="1440321054" time-limit="180000">
+      <question name="Столица Японии" type="3" answer="Токио" />
+      <question name="Столица Китая" type="3" answer="Пекин" />
+      <question name="Столица Таиланда" type="3" answer="Бангкок" />
+    </task>
+    <task name="Столицы стран Африки" key="1440321054" time-limit="300000">
+      <question name=" Столица Бенина" type="3" answer="Порто-Ново" />
+      <question name="Столица Ботсваны" type="3" answer="Габороне" />
+      <question name="Столица Буркина-Фасо" type="3" answer="Уагадугу" />
+      <question name="Столица Бурунди" type="3" answer="Бужумбура" />
+      <question name="Столица Гамбии" type="3" answer="Банжул" />
+      <question name="Столица Ганы" type="3" answer="Аккра" />
+      <question name="Столица Гвинеи" type="3" answer="Конакри" />
+      <question name="Столица Гвинеи-Бисау" type="3" answer="Бисау" />
+      <question name="Столица Джибути" type="3" answer="Джибути" />
+      <question name="Столица Замбии" type="3" answer="Лусака" />
+      <question name="Столица Зимбабве" type="3" answer="Хараре" />
+      <question name="Столица Кабо-Верде" type="3" answer="Прая" />
+      <question name="Столица Камеруна" type="3" answer="Яунде" />
+      <question name="Столица Кении" type="3" answer="Найроби" />
+      <question name="Столица Коморских островов" type="3" answer="Морони" />
+      <question name="Столица Демократической Республики Конго" type="3" answer="Киншаса" />
+      <question name="Столица Конго" type="3" answer="Браззавиль" />
+      <question name="Столица Кот-д'Ивуара" type="3" answer="Ямусукро" />
+      <question name="Столица Лесото" type="3" answer="Масеру" />
+      <question name="Столица Либерии" type="3" answer="Монровия" />
+      <question name="Столица Маврикия" type="3" answer="Порт-Луи" />
+      <question name="Столица Мавритании" type="3" answer="Нуакшот" />
+      <question name="Столица Малави" type="3" answer="Лилонгве" />
+      <question name="Столица Мали" type="3" answer="Бамако" />
+    </task>
+    <task name="Страны БРИКС" key="1440321054" time-limit="180000">
+      <question name="Какая страна не входит в БРИКС?" type="1">
+        <answer name="США" type="RIGHT" />
+        <answer name="Китай" type="WRONG" />
+        <answer name="Бразилия" type="WRONG" />
+        <answer name="ЮАР" type="WRONG" />
+      </question>
+      <question name="Какие 4 страны образовали БРИКС?" type="2">
+        <answer name="Россия" type="RIGHT" />
+        <answer name="Канада" type="WRONG" />
+        <answer name="США" type="WRONG" />
+        <answer name="Китай" type="RIGHT" />
+        <answer name="Индия" type="RIGHT" />
+        <answer name="Бразилия" type="RIGHT" />
+        <answer name="Япония" type="WRONG" />
+        <answer name="Южная Корея" type="WRONG" />
+      </question>
+      <question name="5 страна БРИКС, которая вступила позже других" type="2">
+        <answer name="ЮАР" type="RIGHT" />
+        <answer name="Иран" type="WRONG" />
+        <answer name="Израиль" type="WRONG" />
+        <answer name="США" type="WRONG" />
+        <answer name="Венесуэла" type="WRONG" />
+        <answer name="Камерун" type="WRONG" />
+      </question>
+    </task>
+  </partition>
+</partitions>
