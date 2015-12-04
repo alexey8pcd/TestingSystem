@@ -10,6 +10,9 @@ public class Program {
     private static User currentUser;
 
     public static void main(String[] args) {
+//        UIManager.put("Yes", "Да");
+//        UIManager.put("No", "Нет");
+//        UIManager.put("Cancel", "Отменить");
         do {
             LoginForm loginForm = new LoginForm(null, true);
             loginForm.setVisible(true);

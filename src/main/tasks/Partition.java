@@ -1,18 +1,18 @@
 package main.tasks;
 
-import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 import javax.swing.tree.TreeNode;
+import main.tasks.questions.Question;
 import org.jdom2.Element;
 
 /**
  * Author Alexey
  */
-public class Partition implements XMLSeriazable, TreeNode{
+public class Partition implements XMLSeriazable, TreeNode {
 
     private String name;
     private final List<Task> taskKit;
@@ -34,8 +34,14 @@ public class Partition implements XMLSeriazable, TreeNode{
         this.name = name;
     }
 
-    public void addTask(Task task) {
+    public boolean addTask(Task task) {
+        for (Task t : taskKit) {
+            if (t.getName().equals(task.getName())) {
+                return false;
+            }
+        }
         this.taskKit.add(task);
+        return true;
     }
 
     public Task getTask(int index) {
@@ -54,24 +60,6 @@ public class Partition implements XMLSeriazable, TreeNode{
                 task.save(writer);
             }
         }
-
-    }
-
-    public static Partition loadPartition(DataInputStream reader) throws IOException {
-        Partition partition = new Partition(reader.readUTF());
-        int amountOfTasks = reader.readInt();
-        for (int i = 0; i < amountOfTasks; i++) {
-            partition.addTask(Task.loadTask(reader));
-        }
-        return partition;
-    }
-
-    public static Partition loadPartition(Element xmlElement) throws Exception{
-        Partition partition = new Partition(xmlElement.getAttributeValue(NAME));
-        for (Element element : xmlElement.getChildren()) {
-            partition.addTask(Task.loadTask(element));
-        }
-        return partition;
     }
 
     @Override
@@ -123,7 +111,5 @@ public class Partition implements XMLSeriazable, TreeNode{
     public String toString() {
         return name;
     }
-    
-    
 
 }

@@ -53,6 +53,22 @@ public class Task implements Iterable<Question>, XMLSeriazable, TreeNode {
         this.key = key;
     }
 
+    /**
+     * Создает полную глубокую копию текущего задания
+     *
+     * @param toCopy
+     */
+    public Task(Task toCopy) {
+        this.name = toCopy.name;
+        key = System.currentTimeMillis() / 1000;
+        questions = new LinkedList<>();
+        currentQuestionNumber = 0;
+        for (Question question : toCopy.questions) {
+            questions.add(question.getCopy());
+        }
+        this.timeLimit = toCopy.timeLimit;
+    }
+
     public Question getQuestion(int index) {
         if (questions != null && questions.size() > index) {
             return questions.get(index);
@@ -137,16 +153,6 @@ public class Task implements Iterable<Question>, XMLSeriazable, TreeNode {
         Collections.shuffle(questions);
     }
 
-    public static Task loadTask(Element element) throws Exception{
-        Task task = new Task(element.getAttributeValue(NAME),
-                Long.valueOf(element.getAttributeValue(KEY)));
-        task.setTimeLimit(Long.valueOf(element.getAttributeValue(TIME_LIMIT)));
-        for (Element element1 : element.getChildren()) {
-            task.addQuestion(QuestionFactory.createFromXMLElement(element1));
-        }
-        return task;
-    }
-
     @Override
     public Element getXMLElement() {
         Element element = new Element("task");
@@ -198,6 +204,5 @@ public class Task implements Iterable<Question>, XMLSeriazable, TreeNode {
     public String toString() {
         return name;
     }
-    
-    
+
 }

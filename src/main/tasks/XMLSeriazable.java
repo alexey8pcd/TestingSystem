@@ -11,5 +11,5 @@ public interface XMLSeriazable {
     public static final String ANSWER = "answer";
     
     public Element getXMLElement();
-
+    
 }

@@ -86,4 +86,13 @@ public class QuestionNK extends Question {
         return CLASS_TYPE;
     }
 
+    @Override
+    public Question getCopy() {
+        QuestionNK questionNK = new QuestionNK(title);
+        for (Variant variant : variants) {
+            questionNK.addVariant(new Variant(variant.getText(), variant.getAnswerType()));
+        }
+        return questionNK;
+    }
+
 }

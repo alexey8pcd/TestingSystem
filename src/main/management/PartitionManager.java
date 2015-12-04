@@ -11,6 +11,9 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import main.tasks.Partition;
+import main.tasks.Task;
+import static main.tasks.factories.ObjectFactory.*;
+import org.jdom2.Element;
 
 /**
  * Управляет загрузкой и сохранением набора разделов
@@ -19,10 +22,32 @@ import main.tasks.Partition;
  */
 public class PartitionManager {
 
-    public static final String PARTITION_FILE_PATH = "./partitions.dat";
+    public static final String PARTITION_FILE_PATH = "./partitions.dat";    
+
+    public static void export(List<Partition> partitions, Object[] path,
+            Element toExport) throws Exception {
+        String className = toExport.getName();
+        if (Task.class.getSimpleName().equalsIgnoreCase(className)) {
+            Task task = loadTask(toExport);
+            for (Object pathElement : path) {
+                if (pathElement instanceof Partition) {
+                    Partition target = (Partition) pathElement;
+                    target.addTask(task);
+                    break;
+                }
+            }
+        } else if (Partition.class.getSimpleName().equalsIgnoreCase(className)) {
+            Partition partition = loadPartition(toExport);
+            partitions.add(partition);
+        }
+    }
+
+    
 
     /**
-     * Загружает из файла набор разделов с заданиями     *
+     * Загружает из файла набор разделов с заданиями
+     *
+     *
      * @return загруженный список разделов с заданиями
      */
     public static List<Partition> loadAllPartitions() {
@@ -31,7 +56,7 @@ public class PartitionManager {
                 new File(PARTITION_FILE_PATH)))) {
             int amountOfPartitions = reader.readInt();
             for (int i = 0; i < amountOfPartitions; i++) {
-                partitions.add(Partition.loadPartition(reader));
+                partitions.add(loadPartition(reader));
             }
         } catch (FileNotFoundException ex) {
 
@@ -64,4 +89,5 @@ public class PartitionManager {
             JOptionPane.showMessageDialog(null, ex.toString());
         }
     }
+
 }

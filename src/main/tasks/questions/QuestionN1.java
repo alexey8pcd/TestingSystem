@@ -96,4 +96,14 @@ public class QuestionN1 extends Question {
     public int getClassType() {
         return CLASS_TYPE;
     }
+
+    @Override
+    public Question getCopy() {
+        QuestionN1 questionN1 = new QuestionN1(title);
+        for (String variantTitle : listOfVariantTitles) {
+            questionN1.addVariant(variantTitle);
+        }
+        questionN1.setNumberOfRightVariant(numberOfRightVariant);
+        return questionN1;
+    }
 }

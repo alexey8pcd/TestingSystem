@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<partition name="Тестовый">
+  <task name="Столицы стран" key="1449201164" time-limit="1800000">
+    <question name="Столица России" type="3" answer="Москва" />
+    <question name="Столица Франции" type="3" answer="Париж" />
+    <question name="Столица Германии" type="3" answer="Берлин" />
+  </task>
+</partition>

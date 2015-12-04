@@ -21,8 +21,8 @@ public class Question11 extends Question {
         super(title);
         this.rightVariant = variant;
     }
-    
-    public Question11(String nameOfRightVariant, String title){
+
+    public Question11(String nameOfRightVariant, String title) {
         super(title);
         this.rightVariant = new Variant(nameOfRightVariant, AnswerType.RIGHT);
     }
@@ -71,6 +71,13 @@ public class Question11 extends Question {
     @Override
     public int getClassType() {
         return CLASS_TYPE;
+    }
+
+    @Override
+    public Question getCopy() {
+        Question11 question11
+                = new Question11(rightVariant.getText(), title);
+        return question11;
     }
 
 }

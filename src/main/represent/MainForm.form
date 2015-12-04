@@ -24,30 +24,30 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="buttonCreateTask" min="-2" pref="90" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="buttonDeleteChoosenTask" min="-2" pref="90" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="bShowResults" min="-2" pref="90" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="buttonPerformTask" min="-2" pref="90" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                  <Component id="jScrollPane1" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="buttonCreateNewPartition" min="-2" pref="120" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="buttonDeleteChoosenPartition" min="-2" pref="120" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="bExportToXML" min="-2" pref="120" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="bImportFromXml" min="-2" pref="120" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="buttonCreateNewPartition" min="-2" pref="90" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="buttonDeleteChoosenPartition" min="-2" pref="90" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="bExportToXML" min="-2" pref="90" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="bExportToXML1" min="-2" pref="90" max="-2" attributes="0"/>
+                      <Component id="buttonCreateTask" min="-2" pref="120" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="buttonDeleteChoosenTask" min="-2" pref="120" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="bShowResults" min="-2" pref="120" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="buttonPerformTask" min="-2" pref="120" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -57,9 +57,11 @@
               <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="buttonCreateNewPartition" alignment="1" min="-2" pref="80" max="-2" attributes="0"/>
-                  <Component id="buttonDeleteChoosenPartition" alignment="1" min="-2" pref="80" max="-2" attributes="0"/>
-                  <Component id="bExportToXML" alignment="1" min="-2" pref="80" max="-2" attributes="0"/>
-                  <Component id="bExportToXML1" alignment="1" min="-2" pref="80" max="-2" attributes="0"/>
+                  <Group type="103" alignment="1" groupAlignment="3" attributes="0">
+                      <Component id="bExportToXML" alignment="3" min="-2" pref="80" max="-2" attributes="0"/>
+                      <Component id="bImportFromXml" alignment="3" min="-2" pref="80" max="-2" attributes="0"/>
+                      <Component id="buttonDeleteChoosenPartition" alignment="3" min="-2" pref="80" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jScrollPane1" pref="302" max="32767" attributes="0"/>
@@ -97,7 +99,7 @@
     <Component class="javax.swing.JButton" name="bShowResults">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Tahoma" size="10" style="0"/>
+          <Font name="Tahoma" size="12" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;center&gt;&#x41f;&#x440;&#x43e;&#x441;&#x43c;&#x43e;&#x442;&#x440; &#x440;&#x435;&#x437;&#x443;&#x43b;&#x44c;&#x442;&#x430;&#x442;&#x43e;&#x432;"/>
       </Properties>
@@ -129,12 +131,12 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bExportToXMLActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="bExportToXML1">
+    <Component class="javax.swing.JButton" name="bImportFromXml">
       <Properties>
         <Property name="text" type="java.lang.String" value="&lt;html&gt;&lt;center&gt;&#x418;&#x43c;&#x43f;&#x43e;&#x440;&#x442; &#x438;&#x437; XML"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bExportToXML1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bImportFromXmlActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="buttonPerformTask">
@@ -160,6 +162,8 @@
           </Properties>
           <Events>
             <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="treeViewPartitionsMousePressed"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="treeViewPartitionsKeyPressed"/>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="treeViewPartitionsKeyReleased"/>
           </Events>
         </Component>
       </SubComponents>

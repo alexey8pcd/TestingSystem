@@ -3,8 +3,6 @@ package main.tasks.questions;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
-import main.tasks.AnswerType;
-import main.tasks.Variant;
 import main.tasks.XMLSeriazable;
 import main.tasks.input.UserInput;
 import org.jdom2.Element;
@@ -47,4 +45,6 @@ public abstract class Question implements XMLSeriazable {
     public abstract boolean check(UserInput userInput);   
 
     public abstract int getClassType();
+    
+    public abstract Question getCopy();
 }
