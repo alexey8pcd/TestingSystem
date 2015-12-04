@@ -488,14 +488,16 @@ public class MainForm extends javax.swing.JFrame {
                             Partition partition = (Partition) element;
                             if (partition == selectedPartition) {
                                 if (copied) {
-                                    selectedPartition.addTask(new Task(selectedTask));
+                                    Task task = new Task(selectedTask);
+                                    task.setName(task.getName() + System.currentTimeMillis());
+                                    partition.addTask(task);
                                 }
                             } else {
-                                selectedPartition.addTask(selectedTask);
+                                partition.addTask(selectedTask);
                                 if (!copied) {
                                     selectedPartition.getAllTasks().remove(selectedTask);
-                                } 
-                            }                                                   
+                                }
+                            }
                             treeViewPartitions.setBackground(Color.WHITE);
                             selectedTask = null;
                             selectedPartition = null;
